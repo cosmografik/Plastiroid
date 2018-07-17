@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnEvery : MonoBehaviour {
 
-	public GameObject prefab;
+    public GameObject[] prefab;
 	public float seconds;
 	public float maximumMass = 3;
 	float time = 0;
@@ -27,7 +27,7 @@ public class SpawnEvery : MonoBehaviour {
 	}
 
 	public void DoSpawn(){
-		GameObject go = GameObject.Instantiate(prefab, transform.position + Vector3.right*(Random.value > 0.5f ? 6 : -6), transform.rotation);
+        GameObject go = GameObject.Instantiate(prefab[Random.Range(0,prefab.Length)], transform.position + Vector3.right*(Random.value > 0.5f ? 6 : -6), transform.rotation);
 				go.transform.parent = this.transform;
 	}
 

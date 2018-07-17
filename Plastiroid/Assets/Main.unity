@@ -1084,9 +1084,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96574039302ed43d29eca2aa5093d0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1765879754232834, guid: d32a9436ced994ba68196a80b87373e0, type: 2}
-  seconds: 2
-  maximumMass: 4
+  prefab:
+  - {fileID: 1765879754232834, guid: d32a9436ced994ba68196a80b87373e0, type: 2}
+  - {fileID: 1765879754232834, guid: b84bac528c57c46bf910cf3692e8e5df, type: 2}
+  seconds: 1
+  maximumMass: 6
 --- !u!1 &1805527895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,7 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6c1ab3bae314b82b20d0ff47dc0b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlastics: 150
+  maxPlastics: 300
   microplastic: 0.15
   mass: 0
 --- !u!4 &1805527897
@@ -1227,7 +1229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 4
-  turnPower: 2000
+  turnPower: 1500
   damp: 1
   turnDamp: 10
   gravity: 4
@@ -1251,8 +1253,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  fireRate: 8
-  bounceOnEdges: 1
+  fireRate: 12
+  bounceOnEdges: 0
 --- !u!1 &2139074885
 GameObject:
   m_ObjectHideFlags: 0
