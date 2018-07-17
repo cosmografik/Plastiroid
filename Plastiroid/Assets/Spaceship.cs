@@ -13,6 +13,7 @@ public class Spaceship : MonoBehaviour {
 	float rotVel;
 	[HideInInspector]
 	public Vector3 vel;
+	public Bullet bulletPrefab;
 
 
 	// Use this for initialization
@@ -40,8 +41,12 @@ public class Spaceship : MonoBehaviour {
 		transform.position += vel * Time.deltaTime;
 		if (Vector3.Distance(ocean.transform.position, transform.position)>ocean.radius){
 			Vector3 fromTo = ocean.transform.position - transform.position;
-			transform.position += fromTo * 2;
+			transform.position += fromTo * 1.99f;
 		}
 		transform.rotation = Quaternion.AngleAxis(rotVel * Time.deltaTime, Vector3.forward) * transform.rotation;
+
+		if (Input.GetKeyDown(KeyCode.M)){
+			Instantiate(bulletPrefab, transform.position, transform.rotation);
+		}
 	}
 }

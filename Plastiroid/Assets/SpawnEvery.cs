@@ -18,7 +18,7 @@ public class SpawnEvery : MonoBehaviour {
 		time -= Time.deltaTime;
 		if (time<=0){
 			time += seconds;
-			GameObject go = GameObject.Instantiate(prefab, transform.position, transform.rotation);
+			GameObject go = GameObject.Instantiate(prefab, transform.position + Vector3.right*(Random.value > 0.5f ? 6 : -6), transform.rotation);
 			go.transform.parent = this.transform;
 		}
 	}
