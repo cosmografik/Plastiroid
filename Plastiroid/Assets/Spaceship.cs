@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class Spaceship : MonoBehaviour {
 
@@ -14,6 +16,11 @@ public class Spaceship : MonoBehaviour {
 	[HideInInspector]
 	public Vector3 vel;
 	public Bullet bulletPrefab;
+
+	public UnityEvent fire;
+	public float fireRate = 7;
+	public bool bounceOnEdges;
+	float fireCool;
 
 
 	// Use this for initialization
@@ -39,14 +46,22 @@ public class Spaceship : MonoBehaviour {
 		}
 		flame.SetActive(humanTorch);
 		transform.position += vel * Time.deltaTime;
-		if (Vector3.Distance(ocean.transform.position, transform.position)>ocean.radius){
+		if (Vector3.Distance(ocean.transform.position, transform.position)>=ocean.radius){
 			Vector3 fromTo = ocean.transform.position - transform.position;
-			transform.position += fromTo * 1.99f;
+			if (bounceOnEdges){
+				transform.position = ocean.transform.position - fromTo.normalized*ocean.radius;
+			} else {
+				transform.position += fromTo * 1.99f;
+			}
 		}
 		transform.rotation = Quaternion.AngleAxis(rotVel * Time.deltaTime, Vector3.forward) * transform.rotation;
 
-		if (Input.GetKeyDown(KeyCode.M)){
+		fireCool = Mathf.Max(fireCool - Time.deltaTime * fireRate, 0);
+		if (fireCool<=0 && Input.GetKey(KeyCode.M)){
+			fireCool += 1;
+			fire.Invoke();
 			Instantiate(bulletPrefab, transform.position, transform.rotation);
 		}
+		
 	}
 }

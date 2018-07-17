@@ -79,9 +79,13 @@ MonoBehaviour:
   oceanPush: 1
   pushaway: 5
   lerpRot: 0.2
+  vel: {x: 0, y: 0, z: 0}
   split: 0
   splitRadiusBoost: 1
   splitPrefab: {fileID: 1765879754232834}
+  microplastic: 0.05
+  splitCount: 2
+  splitForce: 2
 --- !u!120 &120437125469886662
 LineRenderer:
   m_ObjectHideFlags: 1

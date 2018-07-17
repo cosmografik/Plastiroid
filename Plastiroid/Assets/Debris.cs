@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Debris : MonoBehaviour {
 
@@ -12,12 +13,14 @@ public class Debris : MonoBehaviour {
 	public float pushaway;
 	public float lerpRot = 1;
 	bool inside = false;
-	Vector3 vel;
+	[HideInInspector]
+	public Vector3 vel;
 	public bool split;
 	public float splitRadiusBoost;
 	public GameObject splitPrefab;
 	Spaceship spaceship;
 	public static List<Debris> all;
+	public float microplastic = 0.05f;
 
 
 	// Use this for initialization
@@ -47,14 +50,19 @@ public class Debris : MonoBehaviour {
 	bool Fine(Debris other){
 		return Vector3.Distance(other.transform.position, transform.position) <= other.radius + this.radius;
 	}
-	int splitCount = 3;
+	public int splitCount = 2;
+	public float splitForce;
 	void DoSplit(){
+		float rang = Random.value * 360;
 		float rad = Mathf.Sqrt((radius * radius) / splitCount)*splitRadiusBoost;
 		for (int i = 0; i < splitCount; i++){
 			GameObject go = GameObject.Instantiate(splitPrefab, transform.position, transform.rotation);
-			go.GetComponent<Debris>().radius = rad;
+			Debris deb = go.GetComponent<Debris>();
+			deb.radius = rad;
+			deb.vel = vel + Quaternion.AngleAxis(rang + i * (360 / splitCount), Vector3.forward) * Vector3.right * splitForce;
 			go.transform.parent = transform.parent;
 		}
+		SoundTarget.Play("explosion"+Random.Range(1,4));
 		Destroy(this.gameObject);
 	}
 
@@ -99,12 +107,14 @@ public class Debris : MonoBehaviour {
 		} else {
 			vel += Physics.gravity * Time.deltaTime;
 		}
-		for (int i = all.Count - 1; i >= 0; i--) {
-			Debris deb = all[i];
-			if (deb != this)
-			{
-				if (Broad(deb) && Fine(deb)) {
-					vel += (transform.position - deb.transform.position).normalized * pushaway * Time.deltaTime;
+		if (inside && radius>microplastic){
+			for (int i = all.Count - 1; i >= 0; i--) {
+				Debris deb = all[i];
+				if (deb != this)
+				{
+					if (Broad(deb) && Fine(deb)) {
+						vel += (transform.position - deb.transform.position).normalized * pushaway * Time.deltaTime;
+					}
 				}
 			}
 		}
@@ -117,7 +127,7 @@ public class Debris : MonoBehaviour {
 			Debug.Log("Spacehit!");
 			vel = (transform.position - spaceship.transform.position).normalized * spaceship.vel.magnitude;
 			Vector3 fromTo = (transform.position - spaceship.transform.position).normalized;
-			transform.position = spaceship.transform.position + fromTo * (0.2f + radius);
+			transform.position = spaceship.transform.position + fromTo * (0.2f + radius)+fromTo*Time.deltaTime;
 		}
 		transform.position += vel * Time.deltaTime;
 		if (Vector3.Distance(ocean.transform.position, transform.position) > ocean.radius - radius) {
