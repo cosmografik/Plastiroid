@@ -184,7 +184,7 @@ LineRenderer:
   - {x: 2, y: -3, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.03
+    widthMultiplier: 0.02
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 640263349}
   - component: {fileID: 640263348}
   - component: {fileID: 640263347}
+  - component: {fileID: 640263351}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -400,7 +401,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.7783019, g: 0.8645178, b: 1, a: 1}
+  m_BackGroundColor: {r: 0.12758099, g: 0.19820014, b: 0.35686275, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -440,6 +441,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &640263351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640263346}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfa547679dfb8b43aeef1e0ae038448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dither: 1
+  Pixelate: 1
+  Grain: 0
+  Grain_Old: 0
+  Grain_New: 0
+  grain:
+    m_Enabled: 0
+    m_Settings:
+      colored: 0
+      intensity: 0.2
+      size: 0.4
+      luminanceContribution: 0
+      animated: 0
+  colored: 0
+  intensity: 0.2
+  size: 0.4
+  luminanceContribution: 0
+  animated: 0
+  _palette: {fileID: 11400000, guid: 31626ba81fea8254084fd03d10b9261a, type: 2}
+  _pattern: {fileID: 11400000, guid: 72328df5e1ea34645a7d06d5cb65a764, type: 2}
+  _patternTexture: {fileID: 0}
+  _shader: {fileID: 4800000, guid: 0e4c0c6d48b7240d8b59f441b94c2b0e, type: 3}
+  _pixelScale: 0.558
+  intensityMultiplier: 0.25
+  generalIntensity: 0.5
+  blackIntensity: 1
+  whiteIntensity: 1
+  midGrey: 0.2
+  dx11Grain: 0
+  softness: 0.0001
+  monochrome: 1
+  intensities: {x: 1, y: 1, z: 1}
+  tiling: {x: 64, y: 64, z: 64}
+  monochromeTiling: 64
+  filterMode: 1
+  noiseTexture: {fileID: 0}
+  noiseShader: {fileID: 4800000, guid: 68560b76e4c6d9b4d8b8bf6e844a3654, type: 3}
+  dx11NoiseShader: {fileID: 0}
+  profile: {fileID: 0}
+  ub: {fileID: 0}
+  gm: {fileID: 0}
 --- !u!1 &720297133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1141,7 @@ MonoBehaviour:
   - {fileID: 1765879754232834, guid: d32a9436ced994ba68196a80b87373e0, type: 2}
   - {fileID: 1765879754232834, guid: b84bac528c57c46bf910cf3692e8e5df, type: 2}
   seconds: 1
-  maximumMass: 6
+  maximumMass: 4
 --- !u!1 &1805527895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6c1ab3bae314b82b20d0ff47dc0b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlastics: 300
+  maxPlastics: 400
   microplastic: 0.15
   mass: 0
 --- !u!4 &1805527897
@@ -1160,7 +1213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4.77
-  waterLevel: 3.1
+  waterLevel: 1.67
   waveAmplitude: 0.27
   waveFrequency: 5.99
   waveOffsetRate: -0.5
@@ -1228,11 +1281,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 298db2947039d4590bd9070557c1dca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 4
-  turnPower: 1500
+  power: 5
+  turnPower: 2300
   damp: 1
   turnDamp: 10
-  gravity: 4
+  gravity: 3
   flame: {fileID: 316481155}
   vel: {x: 0, y: 0, z: 0}
   bulletPrefab: {fileID: 114194587835085032, guid: 0d75cae03ba014ba082e7ff7a16f2585,

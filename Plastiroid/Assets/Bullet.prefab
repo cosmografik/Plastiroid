@@ -81,10 +81,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f53ccc20f6ce4d09ad641cde7ea5999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 4
   radius: 0.02
-  impactForce: 2
-  loops: 1
+  impactForce: 1
+  loops: 0
 --- !u!120 &120176854996597808
 LineRenderer:
   m_ObjectHideFlags: 1
