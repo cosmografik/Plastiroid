@@ -77,7 +77,7 @@ MonoBehaviour:
   bouyancy: 0
   dampening: 3
   oceanPush: 1
-  pushaway: 5
+  pushaway: 2
   lerpRot: 0.2
   vel: {x: 0, y: 0, z: 0}
   split: 0
