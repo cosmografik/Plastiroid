@@ -19,7 +19,15 @@ public class Debris : MonoBehaviour {
 	public float splitRadiusBoost;
 	public GameObject splitPrefab;
 	Spaceship spaceship;
-	public static List<Debris> all;
+    static List<Debris> _all;
+    public static List<Debris> all{
+        get {
+            if (_all==null){
+                _all = new List<Debris>();
+            }
+            return _all;
+        }
+    }
 	public float microplastic = 0.05f;
 
 
@@ -27,9 +35,6 @@ public class Debris : MonoBehaviour {
 	void Start () {
 		spaceship = FindObjectOfType<Spaceship>();
 		split = false;
-		if (all == null){
-			all = new List<Debris>();
-		}
 		all.Add(this);
 		Debug.Log("Debris: "+all.Count);
 		_radius = radius;
