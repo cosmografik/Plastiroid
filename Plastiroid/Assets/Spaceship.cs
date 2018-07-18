@@ -67,6 +67,8 @@ public class Spaceship : MonoBehaviour {
 			fire.Invoke();
 			Instantiate(bulletPrefab, transform.position, transform.rotation);
 		}
-		
+        if (Input.GetKeyUp(shoot)){
+            fireCool = 0;
+        }
 	}
 }
