@@ -505,7 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shader: {fileID: 4800000, guid: 6b426a8c366d0584dadb551db862ddeb, type: 3}
   AutomaticPhase: 1
-  Phase: 44.86664
+  Phase: 45.02665
   ConvertToGrayscale: 0
   NoiseIntensity: 0.072
   ScanlinesIntensity: 0.76
@@ -787,6 +787,10 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   fireRate: 7
   bounceOnEdges: 0
+  left: 276
+  right: 275
+  boost: 273
+  shoot: 274
 --- !u!1 &2139074885
 GameObject:
   m_ObjectHideFlags: 0
