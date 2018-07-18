@@ -1253,6 +1253,10 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   fireRate: 8
   bounceOnEdges: 1
+  left: 276
+  right: 275
+  boost: 273
+  shoot: 274
 --- !u!1 &2139074885
 GameObject:
   m_ObjectHideFlags: 0

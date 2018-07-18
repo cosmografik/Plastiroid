@@ -22,6 +22,11 @@ public class Spaceship : MonoBehaviour {
 	public bool bounceOnEdges;
 	float fireCool;
 
+	public KeyCode left;
+	public KeyCode right;
+	public KeyCode boost;
+	public KeyCode shoot;
+
 
 	// Use this for initialization
 	void Start () {
@@ -33,11 +38,11 @@ public class Spaceship : MonoBehaviour {
 		Ocean ocean = Ocean.ocean;
 		bool humanTorch = false;
 		if (ocean.Submerged(transform.position)){
-			if (Input.GetKey(KeyCode.K)){
+			if (Input.GetKey(boost)){
 				humanTorch = true;
 				vel += transform.up * power * Time.deltaTime;
 			}
-			float turn = (Input.GetKey(KeyCode.Q) ? 1 : 0) + (Input.GetKey(KeyCode.D) ? -1 : 0);
+			float turn = (Input.GetKey(left) ? 1 : 0) + (Input.GetKey(right) ? -1 : 0);
 			rotVel += turn * turnPower * Time.deltaTime;
 			rotVel -= rotVel * turnDamp * Time.deltaTime;
 			vel -= vel * damp * Time.deltaTime;
@@ -57,7 +62,7 @@ public class Spaceship : MonoBehaviour {
 		transform.rotation = Quaternion.AngleAxis(rotVel * Time.deltaTime, Vector3.forward) * transform.rotation;
 
 		fireCool = Mathf.Max(fireCool - Time.deltaTime * fireRate, 0);
-		if (fireCool<=0 && Input.GetKey(KeyCode.M)){
+		if (fireCool<=0 && Input.GetKey(shoot)){
 			fireCool += 1;
 			fire.Invoke();
 			Instantiate(bulletPrefab, transform.position, transform.rotation);
