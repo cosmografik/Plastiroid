@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114022334114888122}
   - component: {fileID: 120437125469886662}
   m_Layer: 0
-  m_Name: DebrisBlue
+  m_Name: DebrisPink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,13 +75,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.8
   bouyancy: 0
-  dampening: 3
+  dampening: 2
   oceanPush: 1
   pushaway: 5
   lerpRot: 0.2
   vel: {x: 0, y: 0, z: 0}
   split: 0
-  splitRadiusBoost: 1
+  splitRadiusBoost: 0.5
   splitPrefab: {fileID: 1765879754232834}
   microplastic: 0.05
   splitCount: 2
@@ -101,7 +101,7 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: bea5d90fbb38a462f9be79c3c0a8210b, type: 2}
+  - {fileID: 2100000, guid: 865a111482ae3410991d99fdeb6c1a45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +126,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.02
+    widthMultiplier: 0.03
     widthCurve:
       serializedVersion: 2
       m_Curve:
