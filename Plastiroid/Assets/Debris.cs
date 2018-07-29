@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Debris : MonoBehaviour {
 
 	float _radius;
+    public bool autoGenerateLines = true;
 	public float radius;
 	public float bouyancy;
 	public float dampening;
@@ -29,6 +30,10 @@ public class Debris : MonoBehaviour {
         }
     }
 	public float microplastic = 0.05f;
+    public float minRadius = 0;
+    public bool stayAlive = false;
+    [Range(0, 1)]
+    public float ignoreUnder; 
 
 
 	// Use this for initialization
@@ -38,7 +43,8 @@ public class Debris : MonoBehaviour {
 		all.Add(this);
 		Debug.Log("Debris: "+all.Count);
 		_radius = radius;
-		DrawDebris();
+        if (autoGenerateLines)
+		    DrawDebris();
 	}
 	void OnDestroy(){
 		all.Remove(this);
@@ -58,17 +64,26 @@ public class Debris : MonoBehaviour {
 	public int splitCount = 2;
 	public float splitForce;
 	void DoSplit(){
-		float rang = Random.value * 360;
-		float rad = Mathf.Sqrt((radius * radius) / splitCount)*splitRadiusBoost;
-		for (int i = 0; i < splitCount; i++){
-			GameObject go = GameObject.Instantiate(splitPrefab, transform.position, transform.rotation);
-			Debris deb = go.GetComponent<Debris>();
-			deb.radius = rad;
-			deb.vel = vel + Quaternion.AngleAxis(rang + i * (360 / splitCount), Vector3.forward) * Vector3.right * splitForce;
-			go.transform.parent = transform.parent;
-		}
-		SoundTarget.Play("explosion"+Random.Range(1,4));
-		Destroy(this.gameObject);
+        if (radius>minRadius){
+            float rang = Random.value * 360;
+            float rad = Mathf.Sqrt((radius * radius) / splitCount) * splitRadiusBoost;
+            for (int i = 0; i < splitCount; i++)
+            {
+                GameObject go = GameObject.Instantiate(splitPrefab, transform.position, transform.rotation);
+                Debris deb = go.GetComponent<Debris>();
+                deb.radius = rad;
+                deb.vel = vel + Quaternion.AngleAxis(rang + i * (360 / splitCount), Vector3.forward) * Vector3.right * splitForce;
+                go.transform.parent = transform.parent;
+            }  
+            SoundTarget.Play("explosion" + Random.Range(1, 4));
+            Destroy(this.gameObject);
+        } else {
+            if (!stayAlive){
+                SoundTarget.Play("explosion" + Random.Range(1, 4));
+                Destroy(this.gameObject);
+            }
+        }
+
 	}
 
 	int segments = 12;
@@ -91,7 +106,8 @@ public class Debris : MonoBehaviour {
 	void Update () {
 		if (_radius!=radius){
 			_radius = radius;
-			DrawDebris();
+            if (autoGenerateLines)
+			    DrawDebris();
 		}
 		Ocean ocean = Ocean.ocean;
 		if (ocean.Submerged(transform.position)){
@@ -117,7 +133,7 @@ public class Debris : MonoBehaviour {
 				Debris deb = all[i];
 				if (deb != this)
 				{
-					if (Broad(deb) && Fine(deb)) {
+                    if (deb.radius > radius*ignoreUnder && Broad(deb) && Fine(deb)) {
 						vel += (transform.position - deb.transform.position).normalized * pushaway * Time.deltaTime;
 					}
 				}

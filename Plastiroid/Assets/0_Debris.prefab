@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114022334114888122}
   - component: {fileID: 120437125469886662}
   m_Layer: 0
-  m_Name: DebrisRed
+  m_Name: 0_Debris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11c5096726254bdc9fe0aee287825e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minBouy: -2
-  maxBouy: 1.6
+  minBouy: 0.91
+  maxBouy: 3.73
   minDamp: 1.5
   maxDamp: 3
   minPush: 0.5
@@ -73,19 +73,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8572c0658a09f4d2197cbe135feb9301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.8
+  autoGenerateLines: 1
+  radius: 0.5
   bouyancy: 0
   dampening: 2
   oceanPush: 1
-  pushaway: 5
+  pushaway: 2
   lerpRot: 0.2
   vel: {x: 0, y: 0, z: 0}
   split: 0
-  splitRadiusBoost: 0.5
-  splitPrefab: {fileID: 1765879754232834}
-  microplastic: 0.1
-  splitCount: 5
-  splitForce: 1
+  splitRadiusBoost: 1
+  splitPrefab: {fileID: 1037805785728238, guid: 14cc61915ebc2402f94b5346d6d86cc0,
+    type: 2}
+  microplastic: 0.3
+  minRadius: 0.04
+  stayAlive: 0
+  ignoreUnder: 0.1
+  splitCount: 2
+  splitForce: 2
 --- !u!120 &120437125469886662
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -101,7 +106,7 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: bea5d90fbb38a462f9be79c3c0a8210b, type: 2}
+  - {fileID: 2100000, guid: 4516f4593633b477c8d4af5efdf87137, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +131,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.03
+    widthMultiplier: 0.02
     widthCurve:
       serializedVersion: 2
       m_Curve:
