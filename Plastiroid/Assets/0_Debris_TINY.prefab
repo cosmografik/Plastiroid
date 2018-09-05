@@ -53,8 +53,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11c5096726254bdc9fe0aee287825e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minBouy: -4.53
-  maxBouy: 0
+  minBouy: -1
+  maxBouy: 1
   minDamp: 1.5
   maxDamp: 3
   minPush: 0.5
