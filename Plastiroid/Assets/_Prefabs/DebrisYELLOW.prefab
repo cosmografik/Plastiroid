@@ -86,6 +86,8 @@ MonoBehaviour:
   splitPrefab: {fileID: 1765879754232834}
   microplastic: 0.05
   minRadius: 0
+  stayAlive: 0
+  ignoreUnder: 0
   splitCount: 5
   splitForce: 2
 --- !u!120 &120437125469886662

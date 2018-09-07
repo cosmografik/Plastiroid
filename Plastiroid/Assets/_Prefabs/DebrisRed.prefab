@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8572c0658a09f4d2197cbe135feb9301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoGenerateLines: 1
   radius: 0.8
   bouyancy: 0
   dampening: 2
@@ -84,6 +85,9 @@ MonoBehaviour:
   splitRadiusBoost: 0.5
   splitPrefab: {fileID: 1765879754232834}
   microplastic: 0.1
+  minRadius: 0
+  stayAlive: 0
+  ignoreUnder: 0
   splitCount: 5
   splitForce: 1
 --- !u!120 &120437125469886662

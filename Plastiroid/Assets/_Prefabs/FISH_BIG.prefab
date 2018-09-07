@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114327828067692490}
   - component: {fileID: 120461256612879086}
   m_Layer: 0
-  m_Name: FISH
+  m_Name: FISH_BIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1915705239983716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.12, y: -1.308, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoGenerateLines: 0
-  radius: 0.45
+  radius: 0.72
   bouyancy: 0
   dampening: 3
   oceanPush: 0.3
@@ -63,10 +63,12 @@ MonoBehaviour:
   vel: {x: 0, y: 0, z: 0}
   split: 0
   splitRadiusBoost: 1
-  splitPrefab: {fileID: 1915705239983716, guid: 0f39f2ffc2f4447729fe91728c1d3df1,
+  splitPrefab: {fileID: 1915705239983716, guid: c3aa0dcaabdbe4228b50009fa6fa2e83,
     type: 2}
   microplastic: 0.03
   minRadius: 0.02
+  stayAlive: 0
+  ignoreUnder: 0
   splitCount: 2
   splitForce: 2
 --- !u!114 &114327828067692490
