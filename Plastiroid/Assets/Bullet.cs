@@ -32,6 +32,9 @@ public class Bullet : MonoBehaviour {
 		for (int i = 0; i < Debris.all.Count; i++){
 			Debris deb = Debris.all[i];
 			if (Vector3.Distance(transform.position, deb.transform.position)<deb.radius+radius){
+				if (!deb.CompareTag("plastic")){
+					Score.record.Down();
+				}
 				deb.vel += transform.up * impactForce;
 				Destroy(this.gameObject);
 				deb.split = true;
