@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037805785728238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 3.1, z: 0}
+  m_LocalPosition: {x: 2.481, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,9 +59,9 @@ MonoBehaviour:
   maxDamp: 3
   minPush: 0.5
   maxPush: 1
-  minRadi: 0.05
-  maxRadi: 0.3
-  randomiseRadii: 0
+  minRadi: 0.1
+  maxRadi: 0.15
+  randomiseRadii: 1
 --- !u!114 &114447829121307640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoGenerateLines: 1
-  radius: 0.13
+  radius: 0.1
   bouyancy: 0
   dampening: 2
   oceanPush: 1
@@ -83,12 +83,12 @@ MonoBehaviour:
   vel: {x: 0, y: 0, z: 0}
   split: 0
   splitRadiusBoost: 1
-  splitPrefab: {fileID: 1037805785728238}
+  splitPrefab: {fileID: 0}
   microplastic: 0.3
   minRadius: 0.04
   stayAlive: 0
   ignoreUnder: 0.1
-  splitCount: 4
+  splitCount: 0
   splitForce: 2
 --- !u!120 &120985915779029666
 LineRenderer:
