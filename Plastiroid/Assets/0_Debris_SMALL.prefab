@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minBouy: 0.08
-  maxBouy: 2.24
+  maxBouy: 1.24
   minDamp: 1.5
   maxDamp: 3
   minPush: 0.5
