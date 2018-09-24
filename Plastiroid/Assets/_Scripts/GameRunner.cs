@@ -47,6 +47,7 @@ public class GameRunner : MonoBehaviour {
 	public static void GameOver(){
 		JsonPump.Dump<Record>(Score.record);
 		if (Application.isEditor){
+			Debug.Log("Killdest");
 			//SceneManager.LoadScene("Scenes/GameOver");
 		} else {
 			Application.Quit();
