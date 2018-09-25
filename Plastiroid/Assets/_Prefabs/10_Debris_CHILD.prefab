@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoGenerateLines: 1
-  radius: 0.53
+  radius: 0.41
   bouyancy: 0
   dampening: 2
   oceanPush: 2

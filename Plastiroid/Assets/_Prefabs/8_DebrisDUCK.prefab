@@ -9,94 +9,94 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1765879754232834}
+  m_RootGameObject: {fileID: 1935696017566766}
   m_IsPrefabParent: 1
---- !u!1 &1765879754232834
+--- !u!1 &1935696017566766
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4289210585236078}
-  - component: {fileID: 114446341000135574}
-  - component: {fileID: 114022334114888122}
-  - component: {fileID: 120437125469886662}
+  - component: {fileID: 4702518527642590}
+  - component: {fileID: 114423129691838510}
+  - component: {fileID: 114634265937066482}
+  - component: {fileID: 120835021114240910}
   m_Layer: 0
-  m_Name: 0_Debris
-  m_TagString: fish
+  m_Name: 8_DebrisDUCK
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4289210585236078
+--- !u!4 &4702518527642590
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1765879754232834}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.006, y: 0, z: 0}
+  m_GameObject: {fileID: 1935696017566766}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.8859184, y: 0.31660712, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114022334114888122
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &114423129691838510
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1765879754232834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c11c5096726254bdc9fe0aee287825e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minBouy: -1
-  maxBouy: 0.11
-  minDamp: 1.5
-  maxDamp: 3
-  minPush: 0.5
-  maxPush: 1
-  minRadi: 0.5
-  maxRadi: 0.7
-  randomiseRadii: 0
---- !u!114 &114446341000135574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1765879754232834}
+  m_GameObject: {fileID: 1935696017566766}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8572c0658a09f4d2197cbe135feb9301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoGenerateLines: 1
-  radius: 0.6
+  autoGenerateLines: 0
+  radius: 0.69
   bouyancy: 0
-  dampening: 2
-  oceanPush: 1
-  pushaway: 2
-  lerpRot: 0.2
+  dampening: 2.78
+  oceanPush: 2
+  pushaway: 1.21
+  lerpRot: 0.02
   vel: {x: 0, y: 0, z: 0}
   split: 0
-  splitRadiusBoost: 1
-  splitPrefab: {fileID: 1037805785728238, guid: 14cc61915ebc2402f94b5346d6d86cc0,
+  splitRadiusBoost: 0.8
+  splitPrefab: {fileID: 1720930652430814, guid: 7b2aeb7380d564eea89997703206a907,
     type: 2}
-  microplastic: 0.3
-  minRadius: 0.04
+  microplastic: 0.05
+  minRadius: 0.01
   stayAlive: 0
   ignoreUnder: 0.1
-  splitCount: 3
+  splitCount: 4
   splitForce: 2
---- !u!120 &120437125469886662
+--- !u!114 &114634265937066482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1935696017566766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11c5096726254bdc9fe0aee287825e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minBouy: -0.38
+  maxBouy: 0.95
+  minDamp: 1.5
+  maxDamp: 3
+  minPush: 0.5
+  maxPush: 1
+  minRadi: 0.05
+  maxRadi: 0.3
+  randomiseRadii: 0
+--- !u!120 &120835021114240910
 LineRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1765879754232834}
+  m_GameObject: {fileID: 1935696017566766}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -106,7 +106,7 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 4516f4593633b477c8d4af5efdf87137, type: 2}
+  - {fileID: 2100000, guid: 865a111482ae3410991d99fdeb6c1a45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,10 +127,18 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0.42, y: -0.29, z: 0}
+  - {x: 0.67, y: 0.22, z: 0}
+  - {x: -0.04, y: 0.16, z: 0}
+  - {x: -0.08, y: 0.56, z: 0}
+  - {x: -0.37, y: 0.54, z: 0}
+  - {x: -0.65, y: 0.3, z: 0}
+  - {x: -0.44, y: 0.21, z: 0}
+  - {x: -0.39, y: -0.2, z: 0}
+  - {x: 0.02, y: -0.43, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.02
+    widthMultiplier: 0.03
     widthCurve:
       serializedVersion: 2
       m_Curve:

@@ -9,45 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1765879754232834}
+  m_RootGameObject: {fileID: 1037805785728238}
   m_IsPrefabParent: 1
---- !u!1 &1765879754232834
+--- !u!1 &1037805785728238
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4289210585236078}
-  - component: {fileID: 114446341000135574}
-  - component: {fileID: 114022334114888122}
-  - component: {fileID: 120437125469886662}
+  - component: {fileID: 4056567198670152}
+  - component: {fileID: 114447829121307640}
+  - component: {fileID: 114370841768708792}
+  - component: {fileID: 120985915779029666}
   m_Layer: 0
-  m_Name: 0_Debris
-  m_TagString: fish
+  m_Name: 0_Debris_MICRO
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4289210585236078
+--- !u!4 &4056567198670152
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1765879754232834}
+  m_GameObject: {fileID: 1037805785728238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.006, y: 0, z: 0}
+  m_LocalPosition: {x: 2.481, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114022334114888122
+--- !u!114 &114370841768708792
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1765879754232834}
+  m_GameObject: {fileID: 1037805785728238}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c11c5096726254bdc9fe0aee287825e3, type: 3}
@@ -59,22 +59,22 @@ MonoBehaviour:
   maxDamp: 3
   minPush: 0.5
   maxPush: 1
-  minRadi: 0.5
-  maxRadi: 0.7
-  randomiseRadii: 0
---- !u!114 &114446341000135574
+  minRadi: 0.02
+  maxRadi: 0.07
+  randomiseRadii: 1
+--- !u!114 &114447829121307640
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1765879754232834}
+  m_GameObject: {fileID: 1037805785728238}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8572c0658a09f4d2197cbe135feb9301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   autoGenerateLines: 1
-  radius: 0.6
+  radius: 0.02
   bouyancy: 0
   dampening: 2
   oceanPush: 1
@@ -83,20 +83,19 @@ MonoBehaviour:
   vel: {x: 0, y: 0, z: 0}
   split: 0
   splitRadiusBoost: 1
-  splitPrefab: {fileID: 1037805785728238, guid: 14cc61915ebc2402f94b5346d6d86cc0,
-    type: 2}
+  splitPrefab: {fileID: 1037805785728238}
   microplastic: 0.3
-  minRadius: 0.04
+  minRadius: 0.01
   stayAlive: 0
   ignoreUnder: 0.1
-  splitCount: 3
-  splitForce: 2
---- !u!120 &120437125469886662
+  splitCount: 0
+  splitForce: 5
+--- !u!120 &120985915779029666
 LineRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1765879754232834}
+  m_GameObject: {fileID: 1037805785728238}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
