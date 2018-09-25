@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minBouy: -1
-  maxBouy: 1
+  maxBouy: 0.11
   minDamp: 1.5
   maxDamp: 3
   minPush: 0.5
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoGenerateLines: 1
-  radius: 0.1
+  radius: 0.05
   bouyancy: 0
   dampening: 2
   oceanPush: 1
@@ -83,12 +83,13 @@ MonoBehaviour:
   vel: {x: 0, y: 0, z: 0}
   split: 0
   splitRadiusBoost: 1
-  splitPrefab: {fileID: 0}
-  microplastic: 0.3
-  minRadius: 0.04
+  splitPrefab: {fileID: 1037805785728238, guid: 215db76a3216248679d5c68cc21025dd,
+    type: 2}
+  microplastic: 0.2
+  minRadius: 0.01
   stayAlive: 0
   ignoreUnder: 0.1
-  splitCount: 0
+  splitCount: 3
   splitForce: 2
 --- !u!120 &120985915779029666
 LineRenderer:

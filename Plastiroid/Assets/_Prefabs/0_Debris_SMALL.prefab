@@ -53,8 +53,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11c5096726254bdc9fe0aee287825e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minBouy: 0.08
-  maxBouy: 1.24
+  minBouy: -1
+  maxBouy: 0.11
   minDamp: 1.5
   maxDamp: 3
   minPush: 0.5
@@ -89,7 +89,7 @@ MonoBehaviour:
   minRadius: 0.04
   stayAlive: 0
   ignoreUnder: 0.1
-  splitCount: 2
+  splitCount: 3
   splitForce: 2
 --- !u!120 &120985915779029666
 LineRenderer:
