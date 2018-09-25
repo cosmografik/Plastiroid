@@ -23,7 +23,7 @@ public class Score : MonoBehaviour {
 	public Record recordDisp;
 	public static Record record;
 
-	void Start(){
+	void Awake(){
 		record = new Record();
 		recordDisp = record;
 	}

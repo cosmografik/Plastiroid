@@ -45,8 +45,18 @@ public class Debris : MonoBehaviour {
 		_radius = radius;
         if (autoGenerateLines)
 		    DrawDebris();
+		if (CompareTag("fish")){
+			Score.record.Bump();
+		} else {
+			Score.record.Down();
+		}
 	}
 	void OnDestroy(){
+		if (CompareTag("fish")){
+			Score.record.Bump();
+		} else {
+			Score.record.Down();
+		}
 		all.Remove(this);
 	}
 	
@@ -70,6 +80,7 @@ public class Debris : MonoBehaviour {
             for (int i = 0; i < splitCount; i++)
             {
                 GameObject go = GameObject.Instantiate(splitPrefab, transform.position, transform.rotation);
+				go.tag = this.tag;
                 Debris deb = go.GetComponent<Debris>();
                 deb.radius = rad;
                 deb.vel = vel + Quaternion.AngleAxis(rang + i * (360 / splitCount), Vector3.forward) * Vector3.right * splitForce;

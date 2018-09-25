@@ -24,10 +24,10 @@ public class Guardian : MonoBehaviour {
 		}
 	}
 
-	void OnGUI(){
-		GUI.Label(new Rect(10, 10, 100, 100), "Plastics: " + Debris.all.Count);
-		GUI.Label(new Rect(10, 20, 100, 100), "Mass: " + mass);
-	}
+	// void OnGUI(){
+	// 	GUI.Label(new Rect(10, 10, 100, 100), "Plastics: " + Debris.all.Count);
+	// 	GUI.Label(new Rect(10, 20, 100, 100), "Mass: " + mass);
+	// }
 
 	void ClearExcessMicroplastics(){
 		if (Debris.all.Count>maxPlastics){
